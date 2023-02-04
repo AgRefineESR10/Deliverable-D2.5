@@ -1,0 +1,105 @@
+This MESH cointains a skewcell on the bottom pipe. This does not have an effect on the CFD results.
+
+This geometry was elaborated on 2021 for "Computational Fluid Dynamics optimisation and analysis of existing Anaerobic Digestion and Biorefineries Report" which is available on the following link https://www.researchgate.net/publication/367500195_Computational_Fluid_Dynamics_optimisation_and_analysis_of_existing_Anaerobic_Digestion_and_Biorefineries_Report
+Section  5.5. Flow inside a CSTR (pages 63-69).
+
+Then it has been utilised for this deliverable D2.5.
+
+The following check mesh code shows the skew cell, to visualize it type "foamToVTK -faceSet skewFaces -time 0" on your terminal. 
+
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : checkMesh
+Date   : Feb 04 2023
+Time   : 15:47:28
+Host   : "navier"
+PID    : 9127
+I/O    : uncollated
+Case   : /home/framonet/CSTRcases/cstrBaffles
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Time = 0
+
+Mesh stats
+    points:           961280
+    faces:            2501680
+    internal faces:   2300762
+    cells:            771066
+    faces per cell:   6.22832
+    boundary patches: 4
+    point zones:      0
+    face zones:       1
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     654971
+    prisms:        40071
+    wedges:        0
+    pyramids:      0
+    tet wedges:    71
+    tetrahedra:    0
+    polyhedra:     75953
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            4   455
+            5   1406
+            6   16327
+            7   223
+            8   153
+            9   42805
+           10   161
+           11   1
+           12   13666
+           13   2
+           15   692
+           18   62
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+                   Patch    Faces   Points                  Surface topology
+                   inlet       51       60  ok (non-closed singly connected)
+                impeller    15125    15232      ok (closed singly connected)
+                  vessel    74529    77402  ok (non-closed singly connected)
+                 baffles   111213   113155  ok (non-closed singly connected)
+
+Checking geometry...
+    Overall domain bounding box (0.2 0.020409 0.765519) (1.46703 1.66041 1.96552)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (2.00177e-15 6.9641e-14 1.47923e-15) OK.
+    Max cell openness = 3.38312e-16 OK.
+    Max aspect ratio = 19.357 OK.
+    Minimum face area = 1.16626e-06. Maximum face area = 0.000583037.  Face area magnitudes OK.
+    Min volume = 1.27828e-08. Max volume = 1.17619e-05.  Total volume = 1.82369.  Cell volumes OK.
+    Mesh non-orthogonality Max: 65.7845 average: 9.70872
+    Non-orthogonality check OK.
+    Face pyramids OK.
+ ***Max skewness = 4.1624, 1 highly skew faces detected which may impair the quality of the results
+  <<Writing 1 skew faces to set skewFaces
+    Coupled point location match (average 0) OK.
+
+Failed 1 mesh checks.
+
+End
+

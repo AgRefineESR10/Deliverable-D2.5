@@ -1,0 +1,77 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      epsilon;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -3 0 0 0 0];
+
+internalField   uniform 20;
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 1;
+    }
+    outlet
+    {
+        type            zeroGradient;
+    }
+
+    vessel
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+
+    impeller
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade1
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade2
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade3
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade4
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade5
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+    blade6
+    {
+        type            epsilonWallFunction;
+        value           $internalField;
+    }
+}
+
+
+// ************************************************************************* //

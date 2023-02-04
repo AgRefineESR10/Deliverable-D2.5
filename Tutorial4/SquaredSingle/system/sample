@@ -1,0 +1,144 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      sample;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+type sets;
+libs            ("libsampling.so");
+
+interpolationScheme cellPoint;
+
+setFormat       raw;
+writeControl	writeTime;
+sets
+(
+    upcomer
+    {
+        type    points;
+        points
+	(
+	(0.245 0.02 0.37)
+	(0.245 0.05 0.37)
+	(0.245 0.09 0.37)
+	(0.245 0.14 0.37)
+	(0.245 0.23 0.37)
+	(0.245 0.32 0.37)
+	(0.245 0.40 0.37)
+	(0.245 0.50 0.37)
+	(0.245 0.58 0.37)
+	);    
+        ordered     yes;
+        axis        y;
+    }
+
+
+
+    downcomer
+    {
+	type    points;
+        points
+	(
+	(0.16 0.02 0.37)
+	(0.16 0.05 0.37)
+	(0.16 0.09 0.37)
+	(0.16 0.14 0.37)
+	(0.16 0.23 0.37)
+	(0.16 0.32 0.37)
+	(0.16 0.40 0.37)
+	(0.16 0.50 0.37)
+	(0.16 0.58 0.37)	);       
+        ordered     yes;
+        axis        y;
+    }
+
+);
+
+fields          (p U.water U.air alpha.air alpha.water k.water k.air);
+
+
+// ************************************************************************* //
+
+
+/*
+type sets;
+libs            ("libsampling.so");
+
+interpolationScheme cellPoint;
+
+setFormat       raw;
+writeControl	writeTime;
+sets
+(
+    upcomer
+    {
+        type    lineUniform;
+        axis 	distance;
+	start	(0.48, 0.17, 1.115);
+        end     (0.48, 0.96, 1.115);
+	nPoints	9;
+/*
+
+ points
+	(
+	(0.48, 0.17, 1.115)
+	(0.48, 0.21, 1.115)
+	(0.48, 0.34, 1.115)
+	(0.48, 0.48, 1.115)
+	(0.48, 0.56, 1.115)
+	(0.48, 0.62, 1.115)
+	(0.48, 0.75, 1.115)
+	(0.48, 0.89, 1.115)
+	(0.48, 0.96, 1.115)
+
+	);
+  */      
+        ordered     yes;
+        axis        y;
+    }
+
+
+
+    downcomer
+    {
+	type    lineUniform;
+        axis 	distance;
+	start	(0.4, 0.17, 1.115);
+        end     (0.4, 0.96, 1.115);
+	nPoints	9;
+/*        
+type    points;
+        points
+	(
+	(0.4, 0.17, 1.115)
+	(0.4, 0.21, 1.115)
+	(0.4, 0.34, 1.115)
+	(0.4, 0.48, 1.115)
+	(0.4, 0.56, 1.115)
+	(0.4, 0.62, 1.115)
+	(0.4, 0.75, 1.115)
+	(0.4, 0.89, 1.115)
+	(0.4, 0.96, 1.115)
+	);
+ */       
+        ordered     yes;
+        axis        y;
+    }
+
+);
+
+fields          (p U.water U.air alpha.air alpha.water k.water k.air);
+
+*/

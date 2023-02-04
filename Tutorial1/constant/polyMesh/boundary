@@ -1,0 +1,89 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    inlet
+    {
+        type            patch;
+        nFaces          14;
+        startFace       1429577;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          16;
+        startFace       1429591;
+    }
+    vessel
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          19722;
+        startFace       1429607;
+    }
+    impeller
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          24199;
+        startFace       1449329;
+    }
+    blade1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1412;
+        startFace       1473528;
+    }
+    blade2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1084;
+        startFace       1474940;
+    }
+    blade3
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1201;
+        startFace       1476024;
+    }
+    blade4
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1267;
+        startFace       1477225;
+    }
+    blade5
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1078;
+        startFace       1478492;
+    }
+    blade6
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          1225;
+        startFace       1479570;
+    }
+)
+
+// ************************************************************************* //
